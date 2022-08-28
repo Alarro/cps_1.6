@@ -1,0 +1,292 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+div,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Удаляем все анимации и переходы для людей, которые предпочитай их не использовать */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@font-face {
+  font-family: 'TTLakes-Medium';
+  src: url(./fonts/TTLakes-Medium.ttf);
+}
+
+@font-face {
+  font-family: 'TTLakes-Bold';
+  src: url(./fonts/TTLakes-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'TTLakes-Light';
+  src: url(./fonts/TTLakes-Light.ttf);
+}
+
+@font-face {
+  font-family: 'TTLakes-Regular';
+  src: url(./fonts/TTLakes-Regular.ttf);
+}
+
+.side-menu {
+  background-color: #ffffff;
+  margin: 0px;
+  padding: 0px;
+  top: 0;
+  font-family: 'TTLakes-Medium';
+  position: fixed;
+  width: 320px;
+  height: 100%;
+  font-size: 16px;
+  line-height: 24px;
+  box-shadow: 16px 0px 52px 0px #0e185033;
+  z-index: 2000;
+  overflow-y: scroll;
+}
+
+.icon-button {
+  width: 40px;
+  height: 40px;
+  border: 0px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  background-color: #FF3E79;
+  cursor: pointer;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon-button_back {
+  background-image: url(../img//iconback.svg);
+  margin-left: 16px;
+  margin-top: 24px;
+  margin-bottom: 16px;
+}
+
+.icon-button_search {
+  background-image: url(../img//iconsearch.svg);
+  margin-right: 16px;
+  margin-top: 24px;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: 97px;
+  height: 51px;
+  margin-top: 20px;
+  margin-right: 64px;
+}
+
+
+.side-menu__nav {
+  position: relative;
+}
+
+.nav__aside-menu__tablist {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+}
+
+.aside-menu__tab:hover {
+  background-color: #e0e0e0;
+}
+
+.aside-menu__tab--active {
+  color: #7e7e82;
+}
+
+.aside-menu__tab--active::before {
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 12px;
+  height: 32px;
+  width: 4px;
+  border-radius: 0px 10px 10px 0px;
+  -webkit-border-radius: 0px 10px 10px 0px;
+  -moz-border-radius: 0px 10px 10px 0px;
+  -ms-border-radius: 0px 10px 10px 0px;
+  -o-border-radius: 0px 10px 10px 0px;
+  background-color: #41f6d7;
+}
+
+.aside-menu__tab {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.aside-menu__footer {
+  display: flex;
+  flex-direction: column;
+  margin-left: 24px;
+  margin-bottom: 32px;
+}
+
+.aside-menu__footer__container_buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.icon-button_call {
+  margin-right: 16px;
+  background-image: url(../img//iconcall.svg);
+}
+
+.icon-button_chat {
+  margin-right: 16px;
+  background-image: url(../img//iconchat.svg);
+}
+
+
+.icon-button_profile {
+  background-image: url(../img//iconprofile.svg);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.aside-menu__footer_email {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.aside-menu__footer_number {
+  margin-top: 12px;
+  font-size: 24px;
+  line-height: 32px;
+  font-family: 'TTLakes-Bold';
+}
+
+.aside-menu__footer_language {
+  margin-top: 40px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: row;
+}
+
+.aside-menu__footer-button {
+  border: 0px;
+  background-color: #ffffff;
+}
+
+.button_language-ru {
+  padding-right: 3.5px;
+}
+
+.button_language-en {
+  padding-left: 3.5px;
+  padding-right: 3.5px;
+}
+
+.button_language-ch {
+  padding-left: 3.5px;
+}
+
+.language-aside-menu__tab--active {
+  color: #7e7e82;
+}
+
+@media (min-width: 360px) {
+
+.icon-button_back {
+  margin-left: 24px;
+}
+
+.icon-button_search {
+  margin-right: 24px;
+}
+
+.aside-menu__footer__container_buttons {
+  padding-top: 32px;
+  margin-left: 8px;
+}
+}
+
+@media (min-width: 768px) {
+
+  .side-menu {
+    position: sticky;
+  }
+
+  .aside-menu__footer {
+    padding-top: 50%;
+  }
+}
