@@ -85,7 +85,7 @@
 </script>
 
 <script>
-  const showMore = () => {
+  const showMoreBrands = () => {
     const container = document.querySelector(".container__brandpage");
     const text = document.getElementById("swiper_show-more-brands");
 
@@ -95,6 +95,21 @@
     } else {
       text.innerHTML = "Показать все";
       container.classList.add("container__brandpage--shrink");
+    }
+  };
+</script>
+
+<script>
+  const showMoreTypes = () => {
+    const container = document.querySelector(".container__typepage");
+    const text = document.getElementById("swiper_show-more-types");
+
+    if (container.classList.contains("container__typepage--shrink")) {
+      text.innerHTML = "Скрыть";
+      container.classList.remove("container__typepage--shrink");
+    } else {
+      text.innerHTML = "Показать все";
+      container.classList.add("container__typepage--shrink");
     }
   };
 </script>
@@ -186,7 +201,7 @@
             очередь, советуют нас родным и близким.
           </p>
         </div>
-        <button class="article__show-more-button" onclick="readMore()">
+        <button class="button__show-more button_read-more" onclick="readMore()">
           <span class="article__read-more-less" id="article__read-more-text">Читать далее</span>
         </button>
       </div>
@@ -237,14 +252,14 @@
       </nav>
       <footer class="aside-menu__footer">
         <div class="aside-menu__footer__container_buttons">
-          <button class="icon-button icon-button_call">
+          <button class="icon-button menu-icon-button_call">
           </button>
   
-          <button class="icon-button icon-button_chat">
+          <button class="icon-button menu-icon-button_chat">
   
           </button>
   
-          <button class="icon-button icon-button_profile">
+          <button class="icon-button menu-icon-button_profile">
           </button>
         </div>
         <a href="" class="aside-menu__footer_email">mail@ups.com</a>
@@ -262,91 +277,91 @@
     </header>
     <div class="swiper__container">
       <div class="container__brandpage container__brandpage--shrink">
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_lenovo" src="../img//img-lenovo.png">
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_samsung" src="../img//img-samsung.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_apple" src="../img//img-apple.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_bosch" src="../img//img-bosch.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_hp" src="../img//img-hp.png">
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_acer" src="../img//img-acer.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
 
-        <button class="slide_button slide_button--pc">
+        <button class="brandpage__slide_button brandpage__slide_button--pc">
           <img class="button-brand_lenovo" src="../img//img-lenovo.png">
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button slide_button--pc">
+        <button class="brandpage__slide_button brandpage__slide_button--pc">
           <img class="button-brand_sony" src="../img//img-sony.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_viewsonic" src="../img//img-viewsonic.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_apple" src="../img//img-apple.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_bosch" src="../img//img-bosch.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_acer" src="../img//img-acer.png"></img>
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="slide_button">
+        <button class="brandpage__slide_button">
           <img class="button-brand_hp" src="../img//img-hp.png">
-          <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
       </div>
 
-      <button class="swiper_button-showmore" onclick="showMore()">
+      <button class="button__show-more" onclick="showMoreBrands()">
         <span class="swiper_show-more-less" id="swiper_show-more-brands">Показать все</span>
       </button>
 
-      <div class="swiper">
+      <div class="swiper brandpage__swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
-          <div class="swiper-slide">
-            <div class="slide_button">
+          <div class="swiper-slide swiper-slide__brandpage">
+            <div class="brandpage__slide_button">
               <img class="button-brand_lenovo" src="../img/img-lenovo.png" />
-              <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+              <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="slide_button">
+          <div class="swiper-slide swiper-slide__brandpage">
+            <div class="brandpage__slide_button">
               <img class="button-brand_samsung" src="../img/img-samsung.png" />
-              <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+              <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="slide_button">
+          <div class="swiper-slide swiper-slide__brandpage">
+            <div class="brandpage__slide_button">
               <img class="button-brand_apple" src="../img/img-apple.png" />
-              <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+              <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="slide_button">
+          <div class="swiper-slide swiper-slide__brandpage">
+            <div class="brandpage__slide_button">
               <img class="button-brand_acer" src="../img/img-acer.png" />
-              <div class="button_go-over"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+              <div class="button_go-over button_brandpage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
             </div>
           </div>
           ...
@@ -355,6 +370,191 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
+
+    <header class="typepage__header">
+      <h1 class="header_title">РЕМОНТ РАЗЛИЧНЫХ ВИДОВ ТЕХНИКИ</h1>
+    </header>
+    <div class="swiper__container">
+      <div class="container__typepage container__typepage--shrink">
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонтные услуги</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонт планшетов</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонт ПК</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонт мониторов</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонт телефонов</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонт гарнитур</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+      </div>
+
+      <button class="button__show-more" onclick="showMoreTypes()">
+        <span class="swiper_show-more-less" id="swiper_show-more-types">Показать все</span>
+      </button>
+    <div class="swiper typepage__swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide swiper-slide__typepage">
+          <div class="typepage__slide_button">
+            <p class="typepage__label">Ремонтные услуги</p>
+            <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide__typepage">
+          <div class="typepage__slide_button">
+            <p class="typepage__label">Ремонт планшетов</p>
+            <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide__typepage">
+          <div class="typepage__slide_button">
+            <p class="typepage__label">Ремонт ПК</p>
+            <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide__typepage">
+          <div class="typepage__slide_button">
+            <p class="typepage__label">Ремонт мониторов</p>
+            <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+          </div>
+        </div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+
+    <header class="price__header">
+      <h1 class="header_title">ЦЕНЫ НА УСЛУГИ</h1>
+    </header>
+
+    <div class="swiper__container">
+      <div class="container__pricepage">
+        <div class="pricepage__slide_button">
+          <article class="pricepage__label">Ремонтные услуги</article>>
+          <button class="button_order button_pricepage"></button>
+        </div>
+        
+        <div class="pricepage__slide_button">
+          <p class="pricepage__label">Ремонт планшетов</p>
+          <button class="button_order button_pricepage"></button>
+        </div>
+        <div class="pricepage__slide_button">
+          <p class="pricepage__label">Ремонт ПК</p>
+          <button class="button_order button_pricepage"></button>
+        </div>
+        <div class="pricepage__slide_button">
+          <p class="pricepage__label">Ремонт мониторов</p>
+          <button class="button_order button_pricepage"></button>
+        </div>
+        <div class="pricepage__slide_button">
+          <p class="pricepage__label">Ремонт телефонов</p>
+          <button class="button_order button_pricepage"></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="swiper pricepage__swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide swiper-slide__pricepage">
+          <div class="pricepage__slide_button">
+            <div class="pricepage__label">
+              <span class="pricepage__slider-title">Ремонтные услуги</span>
+              <span class="pricepage__slider-text">Тестирование с выдачей технического заключения</span>
+              <span class="pricepage__slider-title">Цена</span>
+              <span class="pricepage__slider-text">Бесплатно</span>
+              <div class="slider__footer">
+              <div class="slider__footer-text">
+              <span class="pricepage__slider-title">Срок</span>
+              <span class="pricepage__slider-text">30-120 мин</span></div>
+              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide__pricepage">
+          <div class="pricepage__slide_button">
+            <div class="pricepage__label">
+              <span class="pricepage__slider-title">Ремонтные услуги</span>
+              <span class="pricepage__slider-text">Диагностика</span>
+              <span class="pricepage__slider-title">Цена</span>
+              <span class="pricepage__slider-text">Бесплатно</span>
+              <div class="slider__footer">
+              <div class="slider__footer-text">
+              <span class="pricepage__slider-title">Срок</span>
+              <span class="pricepage__slider-text">30-120 мин</span></div>
+              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide__pricepage">
+          <div class="pricepage__slide_button">
+            <div class="pricepage__label">
+              <span class="pricepage__slider-title">Ремонтные услуги</span>
+              <span class="pricepage__slider-text">Замена программного обеспечения</span>
+              <span class="pricepage__slider-title">Цена</span>
+              <span class="pricepage__slider-text">1 000 ₽</span>
+              <div class="slider__footer">
+              <div class="slider__footer-text">
+              <span class="pricepage__slider-title">Срок</span>
+              <span class="pricepage__slider-text">30-120 мин</span></div>
+              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide__pricepage">
+          <div class="pricepage__slide_button">
+            <div class="pricepage__label">
+              <span class="pricepage__slider-title">Ремонтные услуги</span>
+              <span class="pricepage__slider-text">Замена дисплея</span>
+              <span class="pricepage__slider-title">Цена</span>
+              <span class="pricepage__slider-text">1 000 ₽</span>
+              <div class="slider__footer">
+              <div class="slider__footer-text">
+              <span class="pricepage__slider-title">Срок</span>
+              <span class="pricepage__slider-text">30-120 мин</span></div>
+              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide swiper-slide__pricepage">
+          <div class="pricepage__slide_button">
+            <div class="pricepage__label">
+              <span class="pricepage__slider-title">Ремонтные услуги</span>
+              <span class="pricepage__slider-text">Замена полифонического динамика</span>
+              <span class="pricepage__slider-title">Цена</span>
+              <span class="pricepage__slider-text">1 000 ₽</span>
+              <div class="slider__footer">
+              <div class="slider__footer-text">
+              <span class="pricepage__slider-title">Срок</span>
+              <span class="pricepage__slider-text">30-120 мин</span></div>
+              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+            </div>
+          </div>
+        </div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
     <script type="module">
       import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
 
