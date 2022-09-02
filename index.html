@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="./scss/style.scss">
-    <link rel="stylesheet" href="./scss/menu-mystyle.scss">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
     <script>
     const readMore = () => {
@@ -39,6 +38,20 @@
     asideMenu.classList.remove('side-menu--closed');
   }
 };</script>
+
+<script>
+  const openFeedback = () => {
+  const feedbackMenu = document.querySelector('.feedback');
+
+  if (!feedbackMenu.classList.contains('feedback--closed')) {
+    feedbackMenu.style.display = 'none';
+    feedbackMenu.classList.add('feedback--closed')
+  } else {
+    feedbackMenu.style.display = 'block';
+    feedbackMenu.classList.remove('feedback--closed');
+  }
+};
+</script>
 
 <script>
   const menu__tabActive = () => {
@@ -221,7 +234,7 @@
 
           <button class="icon-button icon-button_repair">
           </button>
-          <button class="icon-button icon-button_checkstatus">
+          <button class="icon-button icon-button_checkstatus" onclick="openFeedback()">
           </button>
         </div>
       </div>
@@ -232,11 +245,11 @@
 
       <div class="header__pc-extra">
           <label class="button_pc-make-request-label">Оставить заявку
-            <button class="icon-button icon-button_pc-make-request"></button>
+            <button onclick="openFeedback()" class="icon-button icon-button_pc-make-request"></button>
           </label>
 
           <label class="button_pc-check-status-label">Статус ремонта
-            <button class="icon-button icon-button_pc-checkstatus"></button>
+            <button onclick="openFeedback()" class="icon-button icon-button_pc-checkstatus"></button>
           </label>
 
       </div>
@@ -251,7 +264,7 @@
         <li><button class="menu__tab prices">Цены на услуги</button></li>
         <li><button class="menu__tab adresses">Специальные цены</button></li>
         <li><button class="menu__tab sale">Адреса сервисных центров</button></li>
-        <li><button class="menu__tab feedback">Отзывы</button></li>
+        <li><button class="menu__tab reviews">Отзывы</button></li>
       </ul>
     </nav>
     <article class="main__article">
@@ -397,7 +410,7 @@
           <p class="typepage__label">Ремонт ПК</p>
           <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
-        <button class="typepage__slide_button">
+        <button class="typepage__slide_button typepage__slide_button--pc">
           <p class="typepage__label">Ремонт мониторов</p>
           <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
@@ -407,6 +420,14 @@
         </button>
         <button class="typepage__slide_button">
           <p class="typepage__label">Ремонт гарнитур</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонт эл. книг</p>
+          <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
+        </button>
+        <button class="typepage__slide_button">
+          <p class="typepage__label">Ремонт принтеров</p>
           <div class="button_go-over button_typepage"><div class="waste-of-time-drawing-icons-with-elements"></div></div>
         </button>
       </div>
@@ -513,7 +534,7 @@
               <div class="slider__footer-text">
               <span class="pricepage__slider-title">Срок</span>
               <span class="pricepage__slider-text">30-120 мин</span></div>
-              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+              <button class="button_order button_pricepage-swiper"><label class="swiper-slide_label">заказать</label></button></div>
             </div>
           </div>
         </div>
@@ -528,7 +549,7 @@
               <div class="slider__footer-text">
               <span class="pricepage__slider-title">Срок</span>
               <span class="pricepage__slider-text">30-120 мин</span></div>
-              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+              <button class="button_order button_pricepage-swiper"><label class="swiper-slide_label">заказать</label></button></div>
             </div>
           </div>
         </div>
@@ -543,7 +564,7 @@
               <div class="slider__footer-text">
               <span class="pricepage__slider-title">Срок</span>
               <span class="pricepage__slider-text">30-120 мин</span></div>
-              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+              <button class="button_order button_pricepage-swiper"><label class="swiper-slide_label">заказать</label></button></div>
             </div>
           </div>
         </div>
@@ -558,7 +579,7 @@
               <div class="slider__footer-text">
               <span class="pricepage__slider-title">Срок</span>
               <span class="pricepage__slider-text">30-120 мин</span></div>
-              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+              <button class="button_order button_pricepage-swiper"><label class="swiper-slide_label">заказать</label></button></div>
             </div>
           </div>
         </div>
@@ -573,7 +594,7 @@
               <div class="slider__footer-text">
               <span class="pricepage__slider-title">Срок</span>
               <span class="pricepage__slider-text">30-120 мин</span></div>
-              <button class="button_order button_pricepage-swiper"><label class="swipepr-slide_label">заказать</label></button></div>
+              <button class="button_order button_pricepage-swiper"><label class="swiper-slide_label">заказать</label></button></div>
             </div>
           </div>
         </div>
@@ -597,5 +618,29 @@
     </footer>
 </div>
 
+
+<div class="feedback feedback--closed">
+  <header class="feedback__header">
+      <button onclick="openFeedback()" class="icon-button icon-button_back_feedback">
+      </button>
+      <h1 class="feedback__header_title">Обратная связь</h1>
+  </header>
+  <div class="feedback__container">
+    <form class="feedback__form">
+      <input type="text" size="30" placeholder="Имя" class="feedback__input input_name">
+      <input type="number" size="12" placeholder="Телефон" class="feedback__input input_number">
+      <input type="email" size="40" placeholder="Электронная почта" class="feedback__input input_email">
+      <textarea rows="10" name="text" placeholder="Сообщение" class="feedback__input input_message"></textarea>
+    </form>
+    <footer class="feedback__footer">
+      <p class="footer_confidence">Нажимая “отправить”, вы даете согласие
+        <span class="footer_red-text">на обработку персональных данных</span> и
+        соглашаетесь с нашей <span class="footer_red-text">политикой конфиденциальности</span></p>
+        <button class="button_send button_feedback">
+          <label class="feedback_label">отправить</label>
+        </button>
+    </footer>
+  </div>
+</div>
   <script type="text/javascript" src="./js/bundle.js"></script></body>
 </html>
