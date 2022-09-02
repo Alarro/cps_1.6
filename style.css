@@ -882,7 +882,7 @@ a {
   vertical-align: top;
   margin: 16px 51px; }
 
-.footer_confidence {
+.footer_confidence_feedback {
   color: #7E7E82; }
 
 .footer_public-offer {
@@ -928,7 +928,7 @@ a {
   border-radius: 0px 10px 10px 0px;
   -webkit-border-radius: 0px 10px 10px 0px;
   -moz-border-radius: 0px 10px 10px 0px;
-  -ms-borde0r-radius: 0px 10px 10px 0px;
+  -ms-border-radius: 0px 10px 10px 0px;
   -o-border-radius: 0px 10px 10px 0px; }
 
 .feedback__container {
@@ -1272,7 +1272,15 @@ a {
   .pricepage_info {
     width: 36%; }
   .footer_copyright {
-    width: 24%; } }
+    width: 24%; }
+  .feedback {
+    width: 440px;
+    right: 0; }
+  .icon-button_back_feedback {
+    position: absolute;
+    left: -20%; }
+  .feedback__header {
+    background-color: #FFFFFF; } }
 
 @media (min-width: 1440px) {
   body {
