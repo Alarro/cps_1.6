@@ -35,12 +35,10 @@
     asideMenu.style.display = 'none';
     asideMenu.classList.add('side-menu--closed');
     blur.style.display = 'none';
-    blur.classlist.remove('side-menu_blur--active')
   } else {
     asideMenu.style.display = 'block';
     asideMenu.classList.remove('side-menu--closed');
     blur.style.display = 'block';
-    blur.classlist.add('side-menu_blur--active')
   }
 };</script>
 
@@ -57,19 +55,16 @@
       asideMenu.style.display = 'none';
       asideMenu.classList.add('side-menu--closed');
       sideBlur.style.display = 'none';
-      sideBlur.classlist.remove('side-menu_blur--active');
       return;
     } if (!feedbackMenu.classList.contains('feedback--closed')) {
     feedbackMenu.style.display = 'none';
     feedbackMenu.classList.add('feedback--closed');
     feedbackBlur.style.display = 'none';
-    feedbackBlur.classlist.remove('feedback_blur--active');
     return;
   } if (!feedbackMenu.classList.contains('call--closed')) {
     callMenu.style.display = 'none';
     callMenu.classList.add('call--closed');
     callBlur.style.display = 'none';
-    callBlur.classlist.remove('call_blur--active');
     return;
   }
   }
@@ -85,12 +80,10 @@
     feedbackMenu.style.display = 'none';
     feedbackMenu.classList.add('feedback--closed');
     blur.style.display = 'none';
-    blur.classlist.remove('feedback_blur--active')
   } else {
     feedbackMenu.style.display = 'block';
     feedbackMenu.classList.remove('feedback--closed');
     blur.style.display = 'block';
-    blur.classlist.add('feedback_blur--active')
   }
 };
 </script>
@@ -104,12 +97,10 @@
     feedbackMenu.style.display = 'none';
     feedbackMenu.classList.add('call--closed');
     blur.style.display = 'none';
-    blur.classlist.remove('call_blur--active')
   } else {
     feedbackMenu.style.display = 'block';
     feedbackMenu.classList.remove('call--closed');
     blur.style.display = 'block';
-    blur.classlist.add('call_blur--active')
   }
 };
 </script>
@@ -203,7 +194,7 @@
     <title>CPS</title>
   <link href="style.css" rel="stylesheet"></head>
   <body>
-    <div class="side-menu_container">
+    
     <div class="side-menu side-menu--closed">
       <header class="side-menu__header">
       <div class="header__container">
@@ -263,7 +254,7 @@
     </div>
     <div class="side-menu_blur" onclick="closeMenu()">
     </div>
-  </div>
+
     
   <div class="cps-page">
     <header class="header">

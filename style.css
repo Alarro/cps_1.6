@@ -339,7 +339,7 @@ button {
   padding: 0px;
   top: 0;
   font-family: 'TTLakes-Medium';
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   font-size: 16px;
@@ -902,8 +902,8 @@ a {
   right: 0;
   font-family: 'TTLakes-Medium';
   position: fixed;
-  width: 320px;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   font-size: 16px;
   line-height: 24px;
   box-shadow: 16px 0px 52px 0px #0e185033;
@@ -919,8 +919,8 @@ a {
   right: 0;
   font-family: 'TTLakes-Medium';
   position: fixed;
-  width: 320px;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
   font-size: 16px;
   line-height: 24px;
   box-shadow: 16px 0px 52px 0px #0e185033;
@@ -1139,6 +1139,14 @@ a {
   .side-menu_container {
     display: flex;
     flex-wrap: nowrap; }
+  .feedback {
+    width: 440px;
+    right: 0;
+    border-left: 1px solid #D9FFF5; }
+  .call {
+    width: 440px;
+    right: 0;
+    border-left: 1px solid #D9FFF5; }
   .feedback-block_container {
     display: flex;
     flex-direction: row-reverse;
@@ -1380,14 +1388,6 @@ a {
     width: 36%; }
   .footer_copyright {
     width: 24%; }
-  .feedback {
-    width: 440px;
-    right: 0;
-    border-left: 1px solid #D9FFF5; }
-  .call {
-    width: 440px;
-    right: 0;
-    border-left: 1px solid #D9FFF5; }
   .icon-button_back_feedback {
     position: fixed;
     right: 40%;
