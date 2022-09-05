@@ -29,26 +29,87 @@
 <script>
   const openMenu = () => {
   const asideMenu = document.querySelector('.side-menu');
+  const blur = document.querySelector('.side-menu_blur')
 
   if (!asideMenu.classList.contains('side-menu--closed')) {
     asideMenu.style.display = 'none';
-    asideMenu.classList.add('side-menu--closed')
+    asideMenu.classList.add('side-menu--closed');
+    blur.style.display = 'none';
+    blur.classlist.remove('side-menu_blur--active')
   } else {
     asideMenu.style.display = 'block';
     asideMenu.classList.remove('side-menu--closed');
+    blur.style.display = 'block';
+    blur.classlist.add('side-menu_blur--active')
   }
 };</script>
 
 <script>
+  const closeMenu = () => {
+    const asideMenu = document.querySelector('.side-menu');
+    const feedbackMenu = document.querySelector('.feedback');
+    const callMenu = document.querySelector('.call');
+    const sideBlur = document.querySelector('.side-menu_blur');
+    const feedbackBlur = document.querySelector('.feedback_blur');
+    const callBlur = document.querySelector('.call_blur')
+
+    if (!asideMenu.classList.contains('side-menu--closed')) {
+      asideMenu.style.display = 'none';
+      asideMenu.classList.add('side-menu--closed');
+      sideBlur.style.display = 'none';
+      sideBlur.classlist.remove('side-menu_blur--active');
+      return;
+    } if (!feedbackMenu.classList.contains('feedback--closed')) {
+    feedbackMenu.style.display = 'none';
+    feedbackMenu.classList.add('feedback--closed');
+    feedbackBlur.style.display = 'none';
+    feedbackBlur.classlist.remove('feedback_blur--active');
+    return;
+  } if (!feedbackMenu.classList.contains('call--closed')) {
+    callMenu.style.display = 'none';
+    callMenu.classList.add('call--closed');
+    callBlur.style.display = 'none';
+    callBlur.classlist.remove('call_blur--active');
+    return;
+  }
+  }
+</script>
+
+
+<script>
   const openFeedback = () => {
   const feedbackMenu = document.querySelector('.feedback');
+  const blur = document.querySelector('.feedback_blur')
 
   if (!feedbackMenu.classList.contains('feedback--closed')) {
     feedbackMenu.style.display = 'none';
-    feedbackMenu.classList.add('feedback--closed')
+    feedbackMenu.classList.add('feedback--closed');
+    blur.style.display = 'none';
+    blur.classlist.remove('feedback_blur--active')
   } else {
     feedbackMenu.style.display = 'block';
     feedbackMenu.classList.remove('feedback--closed');
+    blur.style.display = 'block';
+    blur.classlist.add('feedback_blur--active')
+  }
+};
+</script>
+
+<script>
+  const openCall = () => {
+  const feedbackMenu = document.querySelector('.call');
+  const blur = document.querySelector('.call_blur')
+
+  if (!feedbackMenu.classList.contains('call--closed')) {
+    feedbackMenu.style.display = 'none';
+    feedbackMenu.classList.add('call--closed');
+    blur.style.display = 'none';
+    blur.classlist.remove('call_blur--active')
+  } else {
+    feedbackMenu.style.display = 'block';
+    feedbackMenu.classList.remove('call--closed');
+    blur.style.display = 'block';
+    blur.classlist.add('call_blur--active')
   }
 };
 </script>
@@ -142,7 +203,7 @@
     <title>CPS</title>
   <link href="style.css" rel="stylesheet"></head>
   <body>
-
+    <div class="side-menu_container">
     <div class="side-menu side-menu--closed">
       <header class="side-menu__header">
       <div class="header__container">
@@ -200,6 +261,9 @@
         </ul>
       </footer>
     </div>
+    <div class="side-menu_blur" onclick="closeMenu()">
+    </div>
+  </div>
     
   <div class="cps-page">
     <header class="header">
@@ -232,7 +296,7 @@
           <button class="icon-button icon-button_profile">
           </button>
 
-          <button class="icon-button icon-button_repair">
+          <button class="icon-button icon-button_repair" onclick="openCall()">
           </button>
           <button class="icon-button icon-button_checkstatus" onclick="openFeedback()">
           </button>
@@ -245,7 +309,7 @@
 
       <div class="header__pc-extra">
           <label class="button_pc-make-request-label">Оставить заявку
-            <button onclick="openFeedback()" class="icon-button icon-button_pc-make-request"></button>
+            <button onclick="openCall()" class="icon-button icon-button_pc-make-request"></button>
           </label>
 
           <label class="button_pc-check-status-label">Статус ремонта
@@ -619,6 +683,7 @@
 </div>
 
 
+<div class="feedback-block_container">
 <div class="feedback feedback--closed">
   <header class="feedback__header">
       <button onclick="openFeedback()" class="icon-button icon-button_back_feedback">
@@ -633,14 +698,38 @@
       <textarea rows="10" name="text" placeholder="Сообщение" class="feedback__input input_message"></textarea>
     </form>
     <footer class="feedback__footer">
-      <p class="footer_confidence_feedback">Нажимая “отправить”, вы даете согласие
-        <span class="footer_red-text">на обработку персональных данных</span> и
+      <p class="footer_confidence_feedback">Нажимая “отправить”, вы даете согласие на
+        <span class="footer_red-text">обработку персональных данных</span> и
         соглашаетесь с нашей <span class="footer_red-text">политикой конфиденциальности</span></p>
         <button class="button_send button_feedback">
           <label class="feedback_label">отправить</label>
         </button>
     </footer>
   </div>
+</div>
+<div class="feedback_blur" onclick="closeMenu()"></div>
+</div>
+
+<div class="call-block_container">
+<div class="call call--closed">
+  <header class="call__header">
+    <button onclick="openCall()" class="icon-button icon-button_back_feedback"> 
+      </button>
+      <h1 class="call__header_title">Заказать звонок</h1>
+  </header>
+  <div class="call__container">
+  <input type="number" size="12" placeholder="Телефон" class="call__input input_number">
+  <footer class="call__footer">
+    <p class="footer_confidence_call">Нажимая “отправить”, вы даете согласие на
+      <span class="footer_red-text">обработку персональных данных</span> и
+      соглашаетесь с нашей <span class="footer_red-text">политикой конфиденциальности</span></p>
+      <button class="button_send button_feedback">
+        <label class="feedback_label">отправить</label>
+      </button>
+  </footer>
+</div>
+</div>
+<div class="call_blur" onclick="closeMenu()"></div>
 </div>
   <script type="text/javascript" src="./js/bundle.js"></script></body>
 </html>
