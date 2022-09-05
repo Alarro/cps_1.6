@@ -6,26 +6,6 @@
     <link rel="stylesheet" href="./scss/style.scss">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
 
-<script>
-  const mainMenuTabActive = () => {
-    const target = event.target;
-
-    console.log(target);
-
-    if (!target.classList.contains('menu__tab')) {
-      return;
-    }
-    if (target.classList.contains('menu__tab--active')) {
-      return;
-    } else {
-      document.querySelector('.menu__tab--active')
-        ?.classList.remove('menu__tab--active');
-      target.classList.add('menu__tab--active');
-      target.classList.remove('menu__tab:hover');
-    }
-  };
-</script>
-
 <script type="module">
   import Swiper from "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.esm.browser.min.js";
 
