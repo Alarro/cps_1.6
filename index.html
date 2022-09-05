@@ -5,108 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="./scss/style.scss">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
-    <script>
-    const readMore = () => {
-        const more = document.getElementById('article__first-fragment');
-        const text = document.getElementById('article__read-more-text');
-        const thirdSection = document.querySelector('.article__text-container');
-
-
-        if (!thirdSection.classList.contains('article__text-container--opened')) {
-          more.style.display = 'inline';
-          text.innerHTML = 'Скрыть';
-          thirdSection.classList.add('article__text-container--opened');
-         
-        } else {
-          more.style.display = 'none';
-          text.innerHTML = 'Читать далее';
-          thirdSection.classList.remove('article__text-container--opened');
-          
-        }
-      };
-    </script>
 
 <script>
-  const openMenu = () => {
-  const asideMenu = document.querySelector('.side-menu');
-  const blur = document.querySelector('.side-menu_blur')
-
-  if (!asideMenu.classList.contains('side-menu--closed')) {
-    asideMenu.style.display = 'none';
-    asideMenu.classList.add('side-menu--closed');
-    blur.style.display = 'none';
-  } else {
-    asideMenu.style.display = 'block';
-    asideMenu.classList.remove('side-menu--closed');
-    blur.style.display = 'block';
-  }
-};</script>
-
-<script>
-  const closeMenu = () => {
-    const asideMenu = document.querySelector('.side-menu');
-    const feedbackMenu = document.querySelector('.feedback');
-    const callMenu = document.querySelector('.call');
-    const sideBlur = document.querySelector('.side-menu_blur');
-    const feedbackBlur = document.querySelector('.feedback_blur');
-    const callBlur = document.querySelector('.call_blur')
-
-    if (!asideMenu.classList.contains('side-menu--closed')) {
-      asideMenu.style.display = 'none';
-      asideMenu.classList.add('side-menu--closed');
-      sideBlur.style.display = 'none';
-      return;
-    } if (!feedbackMenu.classList.contains('feedback--closed')) {
-    feedbackMenu.style.display = 'none';
-    feedbackMenu.classList.add('feedback--closed');
-    feedbackBlur.style.display = 'none';
-    return;
-  } if (!feedbackMenu.classList.contains('call--closed')) {
-    callMenu.style.display = 'none';
-    callMenu.classList.add('call--closed');
-    callBlur.style.display = 'none';
-    return;
-  }
-  }
-</script>
-
-
-<script>
-  const openFeedback = () => {
-  const feedbackMenu = document.querySelector('.feedback');
-  const blur = document.querySelector('.feedback_blur')
-
-  if (!feedbackMenu.classList.contains('feedback--closed')) {
-    feedbackMenu.style.display = 'none';
-    feedbackMenu.classList.add('feedback--closed');
-    blur.style.display = 'none';
-  } else {
-    feedbackMenu.style.display = 'block';
-    feedbackMenu.classList.remove('feedback--closed');
-    blur.style.display = 'block';
-  }
-};
-</script>
-
-<script>
-  const openCall = () => {
-  const feedbackMenu = document.querySelector('.call');
-  const blur = document.querySelector('.call_blur')
-
-  if (!feedbackMenu.classList.contains('call--closed')) {
-    feedbackMenu.style.display = 'none';
-    feedbackMenu.classList.add('call--closed');
-    blur.style.display = 'none';
-  } else {
-    feedbackMenu.style.display = 'block';
-    feedbackMenu.classList.remove('call--closed');
-    blur.style.display = 'block';
-  }
-};
-</script>
-
-<script>
-  const menu__tabActive = () => {
+  const mainMenuTabActive = () => {
     const target = event.target;
 
     console.log(target);
@@ -121,57 +22,6 @@
         ?.classList.remove('menu__tab--active');
       target.classList.add('menu__tab--active');
       target.classList.remove('menu__tab:hover');
-    }
-  };
-</script>
-
-<script>
-  const menuTabActive = () => {
-    const target = event.target;
-
-    console.log(target);
-
-    if (!target.classList.contains('aside-menu__tab')) {
-      return;
-    }
-    if (target.classList.contains('aside-menu__tab--active')) {
-      return;
-    } else {
-      document
-        .querySelector('.aside-menu__tab--active')
-        ?.classList.remove('aside-menu__tab--active');
-      target.classList.add('aside-menu__tab--active');
-      target.classList.remove('aside-menu__tab:hover');
-    }
-  };
-</script>
-
-<script>
-  const showMoreBrands = () => {
-    const container = document.querySelector(".container__brandpage");
-    const text = document.getElementById("swiper_show-more-brands");
-
-    if (container.classList.contains("container__brandpage--shrink")) {
-      text.innerHTML = "Скрыть";
-      container.classList.remove("container__brandpage--shrink");
-    } else {
-      text.innerHTML = "Показать все";
-      container.classList.add("container__brandpage--shrink");
-    }
-  };
-</script>
-
-<script>
-  const showMoreTypes = () => {
-    const container = document.querySelector(".container__typepage");
-    const text = document.getElementById("swiper_show-more-types");
-
-    if (container.classList.contains("container__typepage--shrink")) {
-      text.innerHTML = "Скрыть";
-      container.classList.remove("container__typepage--shrink");
-    } else {
-      text.innerHTML = "Показать все";
-      container.classList.add("container__typepage--shrink");
     }
   };
 </script>
@@ -198,7 +48,7 @@
     <div class="side-menu side-menu--closed">
       <header class="side-menu__header">
       <div class="header__container">
-        <button onclick="openMenu()" class="icon-button icon-button_back">
+        <button onclick="openMenu()" class="icon-button icon-button_back open-menu_button">
         </button>
         <div class="menu-header__logo">
           <svg width="98" height="52" viewBox="0 0 98 52" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -217,7 +67,7 @@
       </div>
     </header>
       <nav class="side-menu__nav">
-        <ul class="nav__aside-menu__tablist" onclick="menuTabActive()">
+        <ul class="nav__aside-menu__tablist" onclick="asideMenuTabActive()">
           <li class="aside-menu__tab aside-menu__tab-1 aside-menu__tab--active">
             Ремонт техники
           </li>
@@ -252,7 +102,7 @@
         </ul>
       </footer>
     </div>
-    <div class="side-menu_blur" onclick="closeMenu()">
+    <div class="side-menu_blur blur" onclick="closeMenu()">
     </div>
 
     
@@ -260,7 +110,7 @@
     <header class="header">
       <div class="header__container--mobile">
         <div class="header__left-icons—mobile">
-          <button class="icon-button icon-button_burger" onclick="openMenu()">
+          <button class="icon-button icon-button_burger open-menu_button" onclick="openMenu()">
           </button>
 
           <div class="header__logo">
@@ -287,9 +137,9 @@
           <button class="icon-button icon-button_profile">
           </button>
 
-          <button class="icon-button icon-button_repair" onclick="openCall()">
+          <button class="icon-button icon-button_repair open-call_button" onclick="openCall()">
           </button>
-          <button class="icon-button icon-button_checkstatus" onclick="openFeedback()">
+          <button class="icon-button icon-button_checkstatus open-feedback_button" onclick="openFeedback()">
           </button>
         </div>
       </div>
@@ -300,11 +150,11 @@
 
       <div class="header__pc-extra">
           <label class="button_pc-make-request-label">Оставить заявку
-            <button onclick="openCall()" class="icon-button icon-button_pc-make-request"></button>
+            <button onclick="openCall()" class="icon-button icon-button_pc-make-request open-call_button"></button>
           </label>
 
           <label class="button_pc-check-status-label">Статус ремонта
-            <button onclick="openFeedback()" class="icon-button icon-button_pc-checkstatus"></button>
+            <button onclick="openFeedback()" class="icon-button icon-button_pc-checkstatus open-feedback_button"></button>
           </label>
 
       </div>
@@ -313,7 +163,7 @@
   
   <main class="main">
     <nav class="main__menu">
-      <ul class="main__menu__tablist" onclick="menu__tabActive()">
+      <ul class="main__menu__tablist" onclick="mainMenuTabActive()">
         <li><button class="menu__tab devices menu__tab--active">Ремонтируемые девайсы</button></li>
         <li><button class="menu__tab complimentary">Дополнительные услуги</button></li>
         <li><button class="menu__tab prices">Цены на услуги</button></li>
@@ -409,7 +259,7 @@
         </button>
       </div>
 
-      <button class="button__show-more" onclick="showMoreBrands()">
+      <button class="button__show-more button_show-more-brands" onclick="showMoreBrands()">
         <span class="swiper_show-more-less" id="swiper_show-more-brands">Показать все</span>
       </button>
 
@@ -487,7 +337,7 @@
         </button>
       </div>
 
-      <button class="button__show-more" onclick="showMoreTypes()">
+      <button class="button__show-more button_show-more-types">
         <span class="swiper_show-more-less" id="swiper_show-more-types">Показать все</span>
       </button>
     <div class="swiper typepage__swiper">
@@ -677,7 +527,7 @@
 <div class="feedback-block_container">
 <div class="feedback feedback--closed">
   <header class="feedback__header">
-      <button onclick="openFeedback()" class="icon-button icon-button_back_feedback">
+      <button onclick="openFeedback()" class="icon-button icon-button_back_feedback open-feedback_button">
       </button>
       <h1 class="feedback__header_title">Обратная связь</h1>
   </header>
@@ -698,13 +548,13 @@
     </footer>
   </div>
 </div>
-<div class="feedback_blur" onclick="closeMenu()"></div>
+<div class="feedback_blur blur" onclick="closeMenu()"></div>
 </div>
 
 <div class="call-block_container">
 <div class="call call--closed">
   <header class="call__header">
-    <button onclick="openCall()" class="icon-button icon-button_back_feedback"> 
+    <button onclick="openCall()" class="icon-button icon-button_back_feedback open-call_button"> 
       </button>
       <h1 class="call__header_title">Заказать звонок</h1>
   </header>
@@ -720,7 +570,7 @@
   </footer>
 </div>
 </div>
-<div class="call_blur" onclick="closeMenu()"></div>
+<div class="call_blur blur" id="close-menu_button" onclick="closeMenu()"></div>
 </div>
   <script type="text/javascript" src="./js/bundle.js"></script></body>
 </html>
