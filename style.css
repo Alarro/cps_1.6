@@ -1422,7 +1422,7 @@ a {
     justify-content: space-between; }
   .brandpage__slide_button {
     flex-basis: 240px;
-    margin: 8px 0px;
+    margin: 8px 16px;
     padding-right: 16px;
     padding-left: 16px; }
   .container__typepage {
